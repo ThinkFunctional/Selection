@@ -1,5 +1,5 @@
 # Selection Unit Test
-# 9/22/2021 @ 7:09 am
+# 9/28/2021 @ 7:40 am
 
 # Helper Functions
 import operator as op
@@ -159,8 +159,8 @@ implies_tc = [((True, True), True), ((True, False), False), ((False, True), True
 neither_nor_tc = [((True, True), False), ((True, False), False), ((False, True), False), ((False, False), True)]
 signs_tc = [(-12, -1), (3, 1), (0, 0)]
 sign_count_tc = [([1], (0, 0, 1)), ([], (0, 0, 0)), ([-1], (1, 0, 0)), ([12, 28, 0, 0, -12, -28, 0], (2, 3, 2))]
-letter_grade_tc = [(-1, "NaG"), (100, "A"), (72, "C")]
-letter_grade_plus_tc = [(100, "A+"), (99, "A+"), (98.9, "A"), (80.5, "B-"), (62, "D")]
+letter_grade_tc = [(-1, "NaG"), (101, "NaG"), (100, "A"), (72, "C")]
+letter_grade_plus_tc = [(100, "A+"), (99, "A+"), (98.9, "A"), (80.5, "B-"), (62, "D"), (59.999, "F")]
 is_tri_tc = [((-1, 1, 1), False), ((1, 1, 1), True), ((5, 11, 6), False)]
 order_three_tc = [((1, 1, 1), (1, 1, 1)), ((1, 2, 3), (3, 2, 1)), ((0, -1, 1), (1, 0, -1))]
 tri_test_tc = [((12, 5, 12), 'acute'), ((12, 5, 14), 'obtuse'), ((13, 5, 12), 'right')]
@@ -174,7 +174,7 @@ LCM_tc = [((1, 1), 1), ((1, 3), 3), ((12, 15), 60), ((23, 99), 2277)]
 GCF_tc = [((1, 1), 1), ((12, 15), 3), ((99, 23), 1), ((561, 1938), 51)]
 reduce_frac_tc = [((1, 1), (1, 1)), ((1, 3), (1, 3)), ((12, 15), (4, 5))]
 add_fracs_tc = [((1, 1, 1, 1), (2, 1)), ((1, 2, 1, 3), (5, 6)), ((12, 17, 27, 219), (1029, 1241))]
-pyth_trip_tc = [(200, 127)]
+pyth_trip_tc = [(200, 127), (1000, 881)]
 
 # Create Units
 # This block will cause a crash if you haven't created all of the required functions.
