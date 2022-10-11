@@ -1,5 +1,5 @@
 # Selection Unit Test
-# 9/29/2022 @ 12:22 pm
+# 10/11/2022 @ 8:06 am
 
 # Helper Functions
 import operator as op
@@ -166,7 +166,7 @@ letter_grade_plus_tc = [(100, "A+"), (99, "A+"), (98.9, "A"), (80.5, "B-"), (62,
 is_tri_tc = [((-1, 1, 1), False), ((1, 1, 1), True), ((5, 11, 6), False)]
 order_three_tc = [((1, 1, 1), (1, 1, 1)), ((1, 2, 3), (3, 2, 1)), ((0, -1, 1), (1, 0, -1))]
 extrema_tc = [([12], (12, 12)), ([-13, -17, 4, -44, 37, -48, 22, -49, -7, 34, -4, -2, 13, 44, -32, 31, 48, 18, 43, -17, 34, -37, 44, 25, 1, 26, -6, 34], (48, -49))]
-tri_test_tc = [((12, 5, 12), 'acute'), ((12, 5, 14), 'obtuse'), ((13, 5, 12), 'right')]
+tri_test_tc = [((12, 5, 12), 'acute'), ((12, 5, 14), 'obtuse'), ((13, 5, 12), 'right'), ((0, 1, 2), 'NaT'), ((1, 2, 300), 'NaT')]
 digit_count_tc = [(1, 1), (12, 2), (123456, 6)]
 leap_year_tc = [(400, True), (201, False), (300, False), (304, True)]
 sq_rt_tc = [(0, 0), (1, 1), (12, 3.4641016151377544), (12**9, 71831.61109149648)]
@@ -195,7 +195,7 @@ is_tri_unit = Unit(is_tri, "can it be a triangle", is_tri_tc, True, False, eq_co
 order_three_unit = Unit(order_three, "order three", order_three_tc, True, False, eq_comp)
 extrema_unit = Unit(extrema, "max and min elements", extrema_tc, False, False, eq_comp)
 extrema_tc = [([12], (12, 12)), ([-13, -17, 4, -44, 37, -48, 22, -49, -7, 34, -4, -2, 13, 44, -32, 31, 48, 18, 43, -17, 34, -37, 44, 25, 1, 26, -6, 34], (48, -49))]
-tri_test_unit = Unit(tri_test, "triangle test - right, acute or obtuse", tri_test_tc, True, False, eq_comp)
+tri_test_unit = Unit(tri_test, "triangle test - right, acute, obtuse or NaT", tri_test_tc, True, False, eq_comp)
 digit_count_unit = Unit(digit_count, "digit count", digit_count_tc, False, False, eq_comp)
 leap_year_unit = Unit(leap_year, "leap year", leap_year_tc, False, False, eq_comp)
 sq_rt_unit = Unit(sq_rt, "square root", sq_rt_tc, False, False, approx_eq)
